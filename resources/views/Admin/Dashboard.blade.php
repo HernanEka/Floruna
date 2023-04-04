@@ -42,7 +42,8 @@
                                             lead-in to additional content. This content is a little bit longer.</p>
                                     </div>
                                     <div class="card-footer text-center">
-                                        <a href="#" class="btn btn-success px-2">Read More</a>
+                                        <a href="#" class="btn btn-success px-4 mx-3">Detail</a>
+                                        <a href="#" class="btn btn-danger px-4 mx-3">Delete</a>
                                     </div>
                                 </div>
                             </div>
