@@ -52,12 +52,12 @@
                     @auth
                         <li class="nav-item">
                             <div class="dropdown">
-                                <a class="nav-link fw-bold dropdown-toggle" href="#" role="button"
+                                <a class="nav-link fs-5 text-dark dropdown-toggle" href="#" role="button"
                                     id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="bi bi-person-circle"></i> {{ auth()->user()->username }}
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuLink">
-                                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                                    <li><a class="dropdown-item" href="/profile">Profile</a></li>
                                     @if (auth()->user()->role == 'Admin')
                                         <li><a class="dropdown-item" href="/dashboard">Dashboard Admin</a></li>
                                     @endif
