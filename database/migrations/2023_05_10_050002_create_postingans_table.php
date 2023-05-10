@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('judul');
             $table->text('lokasi');
             $table->text('keterangan');
+            $table->text('status')->default('Menunggu Konfirmasi');
             $table->timestamps();
         });
     }

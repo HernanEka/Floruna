@@ -17,7 +17,7 @@ class PostinganController extends Controller
     {
         $posting = new Postingan();
 
-        $path = public_path() . '/upload/Postingan/' . auth()->user()->username;
+        $path = public_path() . '/upload/Postingan/';
         File::makeDirectory($path, $mode = 0777, true, true);
 
         $foto = $request->foto->getClientOriginalName() . '-' . time() . '- Postingan -'
@@ -28,6 +28,16 @@ class PostinganController extends Controller
         $posting->lokasi = $request->lokasi;
         $posting->keterangan = $request->keterangan;
         $posting->gambar = $foto;
+        $posting->save();
+
+        return back();
+    }
+
+    public function konfirmasi($id)
+    {
+        $posting = Postingan::find($id);
+
+        $posting->status = "Terkonfirmasi";
         $posting->save();
 
         return back();
