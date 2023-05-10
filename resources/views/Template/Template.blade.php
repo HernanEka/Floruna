@@ -42,6 +42,11 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">ABOUT</a>
                     </li>
+                    @auth
+                        @if (auth()->user()->role == 'Comunity')
+                            <li class="nav-item"><a class="nav-link active" href="/posting">POSTING</a></li>
+                        @endif
+                    @endauth
                 </ul>
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     @guest
@@ -60,6 +65,9 @@
                                     <li><a class="dropdown-item" href="/profile">Profile</a></li>
                                     @if (auth()->user()->role == 'Admin')
                                         <li><a class="dropdown-item" href="/dashboard">Dashboard Admin</a></li>
+                                    @endif
+                                    @if (auth()->user()->role == 'Comunity')
+                                        <li><a class="dropdown-item" href="/posting">Upload Postingan</a></li>
                                     @endif
                                     <li>
                                         <hr class="dropdown-divider">
