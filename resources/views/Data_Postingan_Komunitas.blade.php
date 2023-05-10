@@ -1,10 +1,10 @@
-@extends('Admin.AdminTemplate')
+@extends('Template.Template')
 
 @section('konten')
-    <section id="DataUser" class="min-vh-100">
+    <section id="Postingan" class="bg-secondary min-vh-100">
         <div class="container py-5">
             <div class="row row-cols-1 row-cols-md-2 g-5">
-                @foreach ($postingan as $data)
+                @foreach ($posting as $data)
                     <div class="col">
                         <div class="card h-100 bg-white p-4">
                             <div class="card-body text-center">
@@ -18,13 +18,10 @@
                                 <div class="card-text mb-5">
                                     {{ $data->keterangan }}
                                 </div>
-                                @if ($data->status == 'Menunggu Konfirmasi')
-                                    <a href="/data/postingan/konfirmasi/{{ $data->id }}"
-                                        class="btn btn-success px-4">Konfirmasi</a>
-                                @else
+                                @if ($data->status == 'Terkonfirmasi')
                                     <button disabled="disabled" class="btn btn-success">Terkonfirmasi</button>
                                 @endif
-                                <a href="/data/postingan/detail/{{ $data->id }}" class="btn btn-primary px-5">Detail</a>
+                                <a href="/postingan/detail/{{ $data->id }}" class="btn btn-primary px-5">Detail</a>
                             </div>
                         </div>
                     </div>
