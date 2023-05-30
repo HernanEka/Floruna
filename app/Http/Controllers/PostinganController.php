@@ -8,6 +8,19 @@ use Illuminate\Support\Facades\File;
 
 class PostinganController extends Controller
 {
+    public function allpost()
+    {
+        $first = Postingan::latest()->first();
+        $postingan = Postingan::where('id','!=',$first->id)->latest()->get();
+        return view('News', compact('postingan','first'));
+    }
+
+    public function detail_news($id)
+    {
+        $news = Postingan::find($id);
+        return view('News_Detail', compact('news'));
+    }
+
     public function index()
     {
         return view('Postingan');
