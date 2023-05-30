@@ -10,8 +10,12 @@ class PostinganController extends Controller
 {
     public function allpost()
     {
-        $first = Postingan::latest()->first();
-        $postingan = Postingan::where('id','!=',$first->id)->latest()->get();
+        $first = Postingan::where('status','=','Terkonfirmasi')->latest()->first();
+        if (!$first) {
+            $postingan = Postingan::all();
+        }else{
+            $postingan = Postingan::where('id','!=',$first->id)->where('status','=','Terkonfirmasi')->latest()->get();
+        }
         return view('News', compact('postingan','first'));
     }
 
