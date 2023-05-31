@@ -93,7 +93,7 @@ class PostinganController extends Controller
     {
         $posting = Postingan::find($id);
 
-        if ($request->gambar) {
+        if ($request->foto) {
             $path = public_path() . '/upload/Postingan/';
             File::makeDirectory($path, $mode = 0777, true, true);
 
