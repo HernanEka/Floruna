@@ -24,7 +24,7 @@
                                     alt="..." style="object-fit: cover; max-height: 300px">
                             </div>
                             <div class="card-body">
-                                <h5 class="card-title">Judul Donasi</h5>
+                                <h5 class="card-title">{{ $data->judul }}</h5>
                                 <div class="text-end">
                                     {{ $data->terkumpul / $data->target }}%
                                 </div>
